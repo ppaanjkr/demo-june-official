@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Tailwind -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,18 +16,22 @@
   <title>June Official</title>
 
   <!-- Theme -->
-  <style type="text/tailwindcss">
-    @theme {
-      /* --color-primary: #ffe4ef;
-      --color-secondary: #ff6fa3; */
-      --color-primary: #f2edc7;
-      --color-secondary: #7e0808;
-      --color-text-main: #2D3135;
-      --color-text-sub: #71767A;
-      --color-bg: #FAF9F6;
-      --color-surface: #FFFFFF; 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#f2edc7',
+            secondary: '#7e0808',
+            'text-main': '#2D3135',
+            'text-sub': '#71767A',
+            bg: '#FAF9F6',
+            surface: '#FFFFFF',
+          }
+        }
+      }
     }
-  </style>
+  </script>
   <style>
     .hidden {
       display: none;
@@ -48,7 +52,7 @@
       <!-- logo -->
       <div class="flex items-center py-3">
         <a class="flex items-center gap-2 font-semibold text-lg text-secondary" href="#">
-          <img src="/june_logo_circle.png" class="w-6" />
+          <img src="june_logo_circle.png" class="w-6" />
           JUNE NANNIRIN OFFICIAL
         </a>
       </div>
@@ -74,7 +78,7 @@
       <!-- desktop -->
       <div id="menuBtnMd" class="hidden md:flex items-center gap-2 relative pr-6">
         <button id="profileBtn" class="flex items-center gap-2 cursor-pointer">
-          <img src="/images/dollar.png" class="w-8 h-8 rounded-full object-cover" />
+          <img src="images/dollar.png" class="w-8 h-8 rounded-full object-cover" />
           <span class="font-medium">Dollar</span>
           <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
@@ -102,7 +106,7 @@
     <div class="grid grid-cols-12">
       <button id="loginBtn"
         class="col-span-12 sm:col-span-4 lg:col-span-3 flex items-center  rounded-lg bg-[#06c755] w-full cursor-pointer">
-        <img src="/icon/btn_base.png" class="border-r px-4 lg:px-2 border-[#000]/10" alt="">
+        <img src="icon/btn_base.png" class="border-r px-4 lg:px-2 border-[#000]/10" alt="">
         <span class="text-white w-full text-center">Log in with LINE</span>
       </button>
     </div>
@@ -179,26 +183,26 @@
     <!-- contact -->
     <section class="mt-6 text-center p-2">
       <div class="w-16 h-16 rounded-full overflow-hidden mx-auto border border-secondary">
-        <img src="/june_logo_circle.png" alt="">
+        <img src="june_logo_circle.png" alt="">
       </div>
       <div class="text-lg font-semibold mt-2">
         Welcome to June Nannirin Official
       </div>
       <div class="flex gap-2 justify-center mt-4">
         <a href="#" class="w-6 h-6">
-          <img src="/icon/social_x.png" alt="">
+          <img src="icon/social_x.png" alt="">
         </a>
         <a href="#" class="w-6 h-6">
-          <img src="/icon/social_tiktok.png" alt="">
+          <img src="icon/social_tiktok.png" alt="">
         </a>
         <a href="#" class="w-6 h-6">
-          <img src="/icon/social_ig.png" alt="">
+          <img src="icon/social_ig.png" alt="">
         </a>
         <a href="#" class="w-6 h-6">
-          <img src="/icon/social_line.png" alt="">
+          <img src="icon/social_line.png" alt="">
         </a>
         <a href="#" class="w-6 h-6">
-          <img src="/icon/social_youtube.png" alt="">
+          <img src="icon/social_youtube.png" alt="">
         </a>
       </div>
       <p class="text-center text-xs text-text-sub mt-4">
@@ -229,7 +233,7 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-    
+
     const loginBtn = document.getElementById("loginBtn");
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
@@ -332,13 +336,13 @@
     // ====================== banner ======================
     const BANNERS = [
       {
-        img: "/images/banners/banner_3.jpg"
+        img: "images/banners/banner_3.jpg"
       },
       {
-        img: "/images/banners/banner_1.jpg"
+        img: "images/banners/banner_1.jpg"
       },
       {
-        img: "/images/banners/banner_2.jpg"
+        img: "images/banners/banner_2.jpg"
       }
     ];
     const slider = document.getElementById("slider");
@@ -412,9 +416,9 @@
 
     // ====================== cart =====================
     const PRODUCTS = [
-      { id: 'p1', name: 'Set A', desc: 'กะเพราหมูกรอบ', price: 50, img: '/images/items/item_1.jpg' },
-      { id: 'p2', name: 'Set B', desc: 'กะเพราหมูกรอบ + ไข่ดาว', price: 60, img: '/images/items/item_2.jpg' },
-      { id: 'p3', name: 'Set C', desc: 'กะเพราหมูกรอบ + ไข่ดาว + ไข่เจียว + pepsi', price: 100, img: '/images/items/item_3.jpg' },
+      { id: 'p1', name: 'Set A', desc: 'กะเพราหมูกรอบ', price: 50, img: 'images/items/item_1.jpg' },
+      { id: 'p2', name: 'Set B', desc: 'กะเพราหมูกรอบ + ไข่ดาว', price: 60, img: 'images/items/item_2.jpg' },
+      { id: 'p3', name: 'Set C', desc: 'กะเพราหมูกรอบ + ไข่ดาว + ไข่เจียว + pepsi', price: 100, img: 'images/items/item_3.jpg' },
     ];
 
     // โหลด cart จาก localStorage

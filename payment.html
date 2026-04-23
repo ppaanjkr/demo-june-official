@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,18 +16,22 @@
     <title>June Official</title>
 
     <!-- Theme -->
-    <style type="text/tailwindcss">
-        @theme {
-      /* --color-primary: #ffe4ef;
-      --color-secondary: #ff6fa3; */
-      --color-primary: #f2edc7;
-      --color-secondary: #7e0808;
-      --color-text-main: #2D3135;
-      --color-text-sub: #71767A;
-      --color-bg: #FAF9F6;
-      --color-surface: #FFFFFF; 
-    }
-  </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f2edc7',
+                        secondary: '#7e0808',
+                        'text-main': '#2D3135',
+                        'text-sub': '#71767A',
+                        bg: '#FAF9F6',
+                        surface: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         .hidden {
             display: none;
@@ -48,7 +52,7 @@
             <!-- logo -->
             <div class="flex items-center py-3">
                 <a class="flex items-center gap-2 font-semibold text-lg text-secondary" href="#">
-                    <img src="/june_logo_circle.png" class="w-6" />
+                    <img src="june_logo_circle.png" class="w-6" />
                     JUNE NANNIRIN OFFICIAL
                 </a>
             </div>
@@ -74,7 +78,7 @@
             <!-- desktop -->
             <div id="menuBtnMd" class="hidden md:flex items-center gap-2 relative pr-6">
                 <button id="profileBtn" class="flex items-center gap-2 cursor-pointer">
-                    <img src="/images/dollar.png" class="w-8 h-8 rounded-full object-cover" />
+                    <img src="images/dollar.png" class="w-8 h-8 rounded-full object-cover" />
                     <span class="font-medium">Dollar</span>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
@@ -161,7 +165,7 @@
 
             <!-- QR -->
             <div class="flex flex-col items-center border border-dashed border-primary/30 rounded-lg p-4">
-                <img src="/images/qrcode.png" class="w-40 h-40 " />
+                <img src="images/qrcode.png" class="w-40 h-40 " />
                 <p class="text-xs mt-2">scan to pay</p>
                 <p id="paymentAmount" class="text-secondary font-bold text-xl">100.00 THB</p>
             </div>
@@ -179,7 +183,12 @@
                 <div id="uploadEmpty">
                     <p
                         class="flex items-center justify-center bg-secondary/5 w-12 h-12 rounded-lg mx-auto text-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M12 3v12" /> <path d="m17 8-5-5-5 5" /> <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v12" />
+                            <path d="m17 8-5-5-5 5" />
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        </svg>
                     </p>
                     <p class="font-semibold mt-3">Upload file</p>
                     <p class="text-xs text-secondary">Allowed images: JPG / JPEG / PNG</p>
@@ -194,7 +203,12 @@
                         </div>
                         <button type="button" onclick="removeFile(event)"
                             class="w-8 h-8 flex items-center justify-center bg-secondary/10 rounded-lg text-secondary hover:bg-secondary/20">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+                                <path d="M18 6 6 18" />
+                                <path d="m6 6 12 12" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -205,11 +219,8 @@
 
         <!-- action -->
         <section class="mt-4">
-            <button 
-                id="confirmPayBtn"
-                onclick="confirmPay()"
-                class="w-full bg-secondary  text-white py-3 rounded-xl font-bold disabled:opacity-50"
-                disabled>
+            <button id="confirmPayBtn" onclick="confirmPay()"
+                class="w-full bg-secondary  text-white py-3 rounded-xl font-bold disabled:opacity-50" disabled>
                 Confirm Payment
             </button>
         </section>
