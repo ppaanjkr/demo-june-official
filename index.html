@@ -146,10 +146,23 @@
         <!-- <span class="inline-block bg-white text-secondary text-xs font-semibold px-3 py-1 rounded-full mb-2">
           🌸 โปรเจกต์พิเศษ
         </span> -->
-        <span class="text-xl font-semibold text-secondary md:text-2xl">June Birthday Project</span>
+        <span class="text-xl font-semibold text-secondary md:text-2xl">JUNENANNIRIN OFFICIAL – 1st Goods Collection</span>
         <p class="text-text-sub text-sm mt-2 md:text-base">
-          June Birthday Project June Birthday Project June Birthday Project June Birthday Project June
-          Birthday Project June Birthday Project June Birthday Project
+          𐔌 เปิด Pre - Order อย่างเป็นทางการสำหรับสินค้าคอลเลกชันแรกจากทาง JUNENANNIRIN OFFICIAL 🐈‍⬛🍒
+          <br><br>
+          บ้านจูนออฟขอเชิญชวนทุกท่านร่วมเป็นส่วนหนึ่งของช่วงเวลาพิเศษนี้ผ่านการ Pre-Order สินค้าคอลเลกชันแรกเพื่อร่วมส่งกำลังใจให้พี่จูนในวันสำคัญ   ۫ . ⟡
+          <br>
+          ♡ โดยรายได้ทั้งหมดหลังหักค่าใช้จ่าย 
+          จะถูกรวบรวมเพื่อนำไปสมทบในโปรเจกต์วันเกิดของพี่จูนและโปรเจกต์ต่าง ๆ ที่จะเกิดขึ้นในอนาคตค่ะ 🙇🏻‍♀️💖
+          <br><br>
+          𐔌 ระยะเวลาเปิดพรีออเดอร์
+          ตั้งแต่วันนี้ - 20 มิถุนายน 2569 เวลา 23.59 น.
+          <br><br>
+          ♡ สินค้าทั้งหมดจะใช้เวลาผลิตประมาณ 25-30 วัน หลังปิดพรีออเดอร์
+          <br><br>
+          ♡ สอบถามเพิ่มเติมได้ที่<br>
+          Twitter : @Junenannirin_TH <br> 
+          Instagram : junenannirin_th  ۫ . ⟡
         </p>
         <div class="flex text-sm text-text-sub gap-2 items-center mt-3 md:text-base">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -162,7 +175,7 @@
             <path d="M3 10h18" />
             <path d="M8 2v4" />
           </svg>
-          <span>1 มิ.ย. 2569 - 30 มิ.ย 2569</span>
+          <span>1 มิ.ย. 2569 - 20 มิ.ย 2569</span>
         </div>
       </div>
     </section>
@@ -336,14 +349,14 @@
     // ====================== banner ======================
     const BANNERS = [
       {
-        img: "images/banners/banner_3.jpg"
+        img: "images/banners/banner_june.jpg"
       },
-      {
-        img: "images/banners/banner_1.jpg"
-      },
-      {
-        img: "images/banners/banner_2.jpg"
-      }
+      // {
+      //   img: "images/banners/banner_1.jpg"
+      // },
+      // {
+      //   img: "images/banners/banner_2.jpg"
+      // }
     ];
     const slider = document.getElementById("slider");
     const dotsContainer = document.getElementById("dots");
@@ -354,7 +367,7 @@
     function renderSlider() {
       slider.innerHTML = BANNERS.map(b => `
     <img src="${b.img}"
-      class="w-full h-56 md:h-80 object-cover flex-shrink-0" />
+      class="w-full h-full object-cover flex-shrink-0" />
   `).join("");
 
       dotsContainer.innerHTML = BANNERS.map((_, i) => `
